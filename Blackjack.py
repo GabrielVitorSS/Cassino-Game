@@ -18,8 +18,6 @@ class Blackjack:
             input('Quantos jogadores estão participando?'))
         self.distribuir_cartas(num_jogadores)
 
-
-
     def distribuir_cartas(self, num_jogadores):
         maos_jogadores = []
         for jogador in range(num_jogadores):

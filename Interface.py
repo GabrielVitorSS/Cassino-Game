@@ -1,3 +1,6 @@
+import Blackjack
+
+
 class Interface:
     def __init__(self):
         print('***********************')
@@ -23,5 +26,17 @@ class Interface:
         for jogador in self.jogadores:
             print(f'Nome: {jogador[0]}, Saldo: R${jogador[1]}')
 
+    def escolher_jogo(self):
+        print('Escola o Jogo: ')
+        print('R - Roleta')
+        print('B - Blackjack')
+        print('Caso não deseje apostar, digite "S" para sair e seu saldo será devolvido.')
+        jogo = input('Digite a opção desejada: ')
+        if jogo.lower() == 'b':
+            blackjack = Blackjack.Blackjack()
+            blackjack.iniciar_jogo()
+
+
 interface = Interface()
 interface.mostrar_jogadores()
+interface.escolher_jogo()
