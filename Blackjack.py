@@ -163,8 +163,11 @@ class Blackjack:
     def jogar_novamente(self, jogadores):
         resposta = input('\nDeseja jogar novamente? (s/n): ')
         if resposta.lower() == 's':
-            for jogador in jogadores:
-                jogador[2] = 0  # Zera a aposta dos jogadores
+            for jogador in jogadores: 
+                saldo_atual = jogador[1]
+                jogador[1] = saldo_atual
+                saldo = saldo_atual
+                nome_jogador = jogador[0]
             self.iniciar_jogo(jogadores)
         else:
             print('Obrigado por jogar!')
