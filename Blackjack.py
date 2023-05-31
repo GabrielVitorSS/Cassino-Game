@@ -131,7 +131,7 @@ class Blackjack:
         for jogador in jogadores:
             if jogador[0] == nome_jogador:
                 aposta = jogador[2]
-                saldo_atual = jogador[1]
+                saldo_atual = jogador[1] - aposta
                 saldo_atual += aposta * 2
                 jogador[1] = saldo_atual
                 print(f'Jogador {nome_jogador} ganhou {aposta * 2}!')
