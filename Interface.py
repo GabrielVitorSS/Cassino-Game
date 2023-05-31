@@ -3,9 +3,9 @@ import Blackjack
 
 class Interface:
     def __init__(self):
-        print('***********************')
+        print('*************************')
         print('Bem-vindo ao GL Cassino!!')
-        print('***********************\n')
+        print('*************************\n')
         self.jogadores = []
         self.criar_jogadores()
 
@@ -38,7 +38,7 @@ class Interface:
 
     def escolher_jogo(self):
         print('\nEscolha o Jogo: ')
-        print('R - Roleta')
+        print('D - Double')
         print('B - Blackjack')
         print('Caso não deseje apostar, digite "S" para sair e seu saldo será devolvido.')
         jogo = input('Digite a opção desejada: ')
