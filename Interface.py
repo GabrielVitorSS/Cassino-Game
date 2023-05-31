@@ -1,4 +1,5 @@
 import Blackjack
+import Double
 
 
 class Interface:
@@ -26,16 +27,6 @@ class Interface:
         for jogador in self.jogadores:
             print(f'Nome: {jogador[0]}, Saldo: R${jogador[1]}')
 
-    def fazer_apostas(self):
-        for jogador in self.jogadores:
-            nome_jogador = jogador[0]
-            saldo = jogador[1]
-            aposta = float(input(f'Jogador {nome_jogador}, faça sua aposta (saldo disponível: R${saldo}): '))
-            while aposta > saldo:
-                print('Saldo insuficiente. Digite um valor válido.')
-                aposta = float(input(f'Jogador {nome_jogador}, faça sua aposta (saldo disponível: R${saldo}): '))
-            jogador.append(aposta)
-
     def escolher_jogo(self):
         print('\nEscolha o Jogo: ')
         print('D - Double')
@@ -44,6 +35,9 @@ class Interface:
         jogo = input('Digite a opção desejada: ')
         if jogo.lower() == 'b':
             game = Blackjack.Blackjack()
+            game.jogar(self.jogadores)
+        if jogo.lower() == 'd':
+            game = Double.Double()
             game.jogar(self.jogadores)
 
 
