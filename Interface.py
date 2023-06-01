@@ -29,7 +29,7 @@ class Interface:
 
     def escolher_jogo(self):
         print('\nEscolha o Jogo: ')
-        print('D - Double')
+        print('D - Double') 
         print('B - Blackjack')
         print('Caso não deseje apostar, digite "S" para sair e seu saldo será devolvido.')
         jogo = input('Digite a opção desejada: ')
