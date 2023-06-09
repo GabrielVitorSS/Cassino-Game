@@ -170,7 +170,7 @@ class Blackjack:
                 nome_jogador = jogador[0]
             self.iniciar_jogo(jogadores)
         else:
-            print('Obrigado por jogar!')
+            print('Obrigado por jogar!! Seu saldo foi enviado para a sua conta')
 
     def jogar(self, jogadores):
         self.iniciar_jogo(jogadores)

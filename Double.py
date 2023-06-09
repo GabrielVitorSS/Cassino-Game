@@ -18,7 +18,6 @@ class Double:
         self.rodar_roleta()
         self.resultado_apostas(jogadores)
         self.pagar_ganhador(jogadores)
-        self.jogar_novamente(jogadores)
 
     def valor_aposta(self, jogadores):
         for jogador in jogadores:
@@ -63,17 +62,17 @@ class Double:
             cor_aposta = jogador[3]
             if self.resultado in self.corVermelho and cor_aposta == 'vermelho':
                 valor_ganho = aposta * 2
-                novo_saldo = saldo + valor_ganho
+                novo_saldo = saldo + (valor_ganho - aposta)
                 jogador[1] = novo_saldo
                 print(f'\n\n{nome_jogador}, você ganhou R${valor_ganho}! Seu novo saldo é de R${novo_saldo}.')
             elif self.resultado in self.corPreto and cor_aposta == 'preto':
                 valor_ganho = aposta * 2
-                novo_saldo = saldo + valor_ganho
+                novo_saldo = saldo + (valor_ganho - aposta)
                 jogador[1] = novo_saldo
                 print(f'\n\n{nome_jogador}, você ganhou R${valor_ganho}! Seu novo saldo é de R${novo_saldo}.')
             elif self.resultado in self.corBranco and cor_aposta == 'branco':
                 valor_ganho = aposta * 14
-                novo_saldo = saldo + valor_ganho
+                novo_saldo = saldo + (valor_ganho - aposta)
                 jogador[1] = novo_saldo
                 print(f'\n\n{nome_jogador}, você ganhou R${valor_ganho}! Seu novo saldo é de R${novo_saldo}.')
             else:
@@ -97,13 +96,8 @@ class Double:
                 valor_ganho = aposta * 14
                 jogador.append(valor_ganho)
 
-    def jogar_novamente(self, jogadores):
-        resposta = input('\nDeseja jogar novamente? (s/n): ')
-        if resposta.lower() == 's':
-            self.resultado = random.choice(self.numeros)
-            self.iniciar_roleta(jogadores)
-        else:
-            print('Obrigado por jogar!')
+    def finalizacao(self, jogadores):
+        resposta = input('\nObrigado por jogar GL-Cassino')
 
     def jogar(self, jogadores):
         self.iniciar_roleta(jogadores)
